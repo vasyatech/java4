@@ -1,0 +1,29 @@
+Lesson 7 Assignment : Database
+Due No Due Date Points 5 Submitting a text entry box or a file upload
+Using the skills you have learned related to Database in this lesson, install one of the following and create a database named COREJAVA:
+
+=> Option 1: the Apache Derby Database (most students do this one)
+
+=> Option 2: the MongoDB Database (Java Drivers are here: https://mongodb.github.io/mongo-java-driver/
+
+ (Links to an external site.)=> Option 3: any other database that you want to use (e.g. Sqlite, etc.)
+
+Then write a Java console application named Lesson7Database that reads in the attached file (Lessons.sql) and uses JDBC to populate the database. After populating the database, query the Lessons table metadata to read the column names. Use these column names as the headers for your output. Then query the contents of the Lessons table, displaying each lesson number and title on a separate line.
+
+IMPORTANT: If you decide to use a NoSQL (Not Only SQL) database such as MongoDB, feel free to modify the SQL data format to suite your needs. Also, if you want to use an alternative API to access the database, e.g. MongoDB driver, then that is OK too.
+
+The KEY POINT of this exercise is to give you Java experience working with the database of your choice. 
+
+$ java Lesson7Database Lessons.sql
+Database Connection info: ...
+Connecting to the database: Done.
+Populating the database: Done.
+Query of Lessons table results:
+....
+Turn in your project as either a URL to https://repl.it (Links to an external site.) or as a single ZIP file named Lesson7Database-FNAME-LNAME.zip, where FNAME is your firstname and LNAME is your last-name.
+
+NOTE: Please submit as URL to https://repl.it (Links to an external site.) or as a .zip file. Do not submit as .rar or .7z.
+
+ 
+
+Attachments
