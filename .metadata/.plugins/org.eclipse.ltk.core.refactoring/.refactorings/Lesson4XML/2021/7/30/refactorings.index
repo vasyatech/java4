@@ -1,0 +1,22 @@
+1626768346897	Rename local variable 'doc'
+1626768374403	Rename local variable 'db'
+1626768391040	Rename local variable 'dbf'
+1626843077038	Rename local variable 'children'
+1626843167612	Rename local variable 'child'
+1626843211603	Rename local variable 'childElement'
+1626845660963	Rename local variable 'factory'
+1626845671012	Rename local variable 'builder'
+1626845937251	Rename local variable 'xpath'
+1626845947273	Rename local variable 'xPathfactory'
+1626845967353	Rename local variable 'expr'
+1626846819824	Rename local variable 'expr'
+1626846839387	Rename local variable 'nodes'
+1626850373922	Rename compilation unit 'SaxParserHandler.java'
+1626850444067	Rename local variable 'user'
+1626852519841	Rename local variable 'user'
+1626852543951	Rename local variable 'user'
+1626853232780	Rename local variable 'factory'
+1626853472649	Delete element
+1626857660191	Delete element
+1626857663217	Delete element
+1626857665397	Delete element

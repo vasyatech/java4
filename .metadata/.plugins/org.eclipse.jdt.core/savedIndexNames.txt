@@ -1,0 +1,11 @@
+INDEX VERSION 1.131+C:\Git\ucsd-java4\.metadata\.plugins\org.eclipse.jdt.core
+2364922273.index
+393080560.index
+2988108571.index
+2802082841.index
+2822836537.index
+1069328497.index
+2196199803.index
+2727705042.index
+651238729.index
+1125081181.index

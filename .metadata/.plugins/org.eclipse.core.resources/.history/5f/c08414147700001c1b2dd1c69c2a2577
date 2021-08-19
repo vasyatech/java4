@@ -1,0 +1,98 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.*;
+
+public class Lesson7Database {
+    private static String dbURL = "jdbc:derby://localhost:1527/myDB;create=true";
+    private static Connection conn = null;
+    private static Statement stmt = null;
+    
+	public static void main(String[] args) throws IOException {
+		/*if (args.length < 1) {
+			System.out.println("File name required");
+			return;
+		}
+		String fileName = args[0];*/
+		String fileName = "lessons.sql";
+		createConnection();
+		readStatements(fileName);
+		displayTable("Greetings");
+	}
+
+	private static void createConnection()
+    {
+        try
+        {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            //Get a connection
+            conn = DriverManager.getConnection(dbURL); 
+        }
+        catch (Exception except)
+        {
+            except.printStackTrace();
+        }
+    }
+	
+	private static void readStatements(String fileName) throws IOException {
+	    //Read From Text File
+        String line;
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            while ((line = br.readLine()) != null) {
+            	executeStatement(line);
+            }
+        }
+	}
+	
+	private static void executeStatement(String statement) {
+		try
+        {
+            stmt = conn.createStatement();
+            stmt.execute(statement);
+            stmt.close();
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
+	}
+	
+	private static void displayTable(String tableName)
+    {
+        try
+        {
+            stmt = conn.createStatement();
+            ResultSet results = stmt.executeQuery("select * from " + tableName);
+            ResultSetMetaData rsmd = results.getMetaData();
+            int numberCols = rsmd.getColumnCount();
+            for (int i=1; i<=numberCols; i++)
+            {
+                //print Column Names
+                System.out.print(rsmd.getColumnLabel(i)+"\t\t");  
+            }
+
+            System.out.println("\n-------------------------------------------------");
+
+            while(results.next())
+            {
+                //int id = results.getInt(1);
+                //String restName = results.getString(2);
+                //String cityName = results.getString(3);
+            	String message = results.getString(1);
+                System.out.println(message);
+            }
+            results.close();
+            stmt.close();
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
+    }
+}
